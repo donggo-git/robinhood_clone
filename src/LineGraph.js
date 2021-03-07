@@ -7,11 +7,11 @@ function LineGraph() {
             y: 20
         },
         {
-            X: 15,
-            Y: 10
+            x: 15,
+            y: 10
         },
         {
-            x: 12,
+            x: 80,
             y: 4
         }
     ]
@@ -25,7 +25,7 @@ function LineGraph() {
                             backgroundColor: "black",
                             borderColor: "#5AC53B",
                             borderWidth: 2,
-                            pointBorderColor: 'rgba(0, 0, 0, 0)',
+                            pointBorderColor: 'rgba(255, 0, 0, 0)',
                             pointBackgroundColor: 'rgba(0, 0, 0, 0)',
                             pointHoverBackgroundColor: '#5AC53B',
                             pointHoverBorderColor: '#000000',
@@ -35,9 +35,14 @@ function LineGraph() {
                         },
                     ],
                 }}
+
                 options={{
                     legend: {
                         display: false
+                    },
+                    tooltips: {
+                        mode: "index",
+                        intersect: false
                     },
                     scales: {
                         yAxes: [{
