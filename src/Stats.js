@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import './Stats.css'
 import axios from 'axios'
 import StatsRow from './StatsRow'
+import { db } from './firebase'
 const TOKEN = 'c13vjtf48v6s4a2e03kg'
 const BASE_URL = 'https://finnhub.io/api/v1/quote'
 function Stats() {
     const [stocksData, setStocksData] = useState([])
+    const [myStocks, setMyStocks] = useState([])
     useEffect(() => {
         let temStockData = []
         const stocksList = ["AAPL", "MSFT", "TSLA", "FB", "BABA", "UBER", "DIS", "SBUX"];
