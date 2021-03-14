@@ -86,7 +86,7 @@ function Stats() {
                     </div>
                 </div>
                 {/**stock we can buy */}
-                <div className='stats_header'>
+                <div className='stats_header stats__list'>
                     <p>List</p>
                 </div>
                 <div className='stats_content'>
