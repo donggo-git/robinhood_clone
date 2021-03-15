@@ -26,3 +26,10 @@ color: white;
 .newsfeed_char{
     width: 100%;
 }
+.newsfeed__buying__section{
+    color:white;
+    display: flex;
+justify-content: space-between;
+border-bottom: 1px solid #3b4754;
+padding: 20px 0;
+}
