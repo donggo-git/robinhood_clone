@@ -54,3 +54,12 @@ padding: 20px 0;
     font-weight: 700;
     margin-bottom: 8px;
 }
+.newsfeed__popularlists__section{
+    margin-top: 60px;
+}
+.newsfeed__popularlists__intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 20px 0;
+}

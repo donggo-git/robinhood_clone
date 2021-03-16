@@ -2,6 +2,22 @@ import './Newsfeed.css'
 import React from 'react'
 import LineGraph from './LineGraph'
 import TimeLine from './TimeLine'
+import { Avatar } from '@material-ui/core'
+import Chip from '@material-ui/core/Chip'
+
+
+const popularTopics = [
+    "Technology",
+    "Top Movies",
+    "Upcoming Earnings",
+    "Crypto",
+    "Cannabis",
+    "Healthcare Supplies",
+    "Index ETFs",
+    "Technology",
+    "China",
+    "Pharma",
+]
 function Newsfeed() {
     return (
         <div className='newsfeed'>
@@ -26,8 +42,26 @@ function Newsfeed() {
                         <h1>Happy Thanksgiving</h1>
                     </div>
                 </div>
+                <div className="newsfeed__popularlists__section">
+                    <div className="newsfeed__popularlists__intro">
+                        <h1>Popular lists</h1>
+                        <p>Show More</p>
+                    </div>
+                    <div className="newsfeed_popularlists_badges">
+                        {popularTopics.map((topic) => (
+                            <Chip
+                                className="topic__badge"
+                                variant="outlined"
+                                label={topic}
+                                avatar={<Avatar
+                                    src={`https://avatars.dicebear.com/api/human/${topic}.svg`}
+                                />}
+                            />
+                        ))}
+                    </div>
+                </div>
             </div>
-        </div>
+        </div >
     )
 }
 
