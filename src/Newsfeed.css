@@ -1,5 +1,5 @@
 .newsfeed{
-    
+    color: white;
     flex: 0.7;
   display: flex;
   flex-direction: column;
@@ -62,4 +62,20 @@ padding: 20px 0;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0 20px 0;
+}
+#topic__badge{
+    border: 1px solid #31363A;
+    height: 30px;
+    padding: 3px;
+    border-radius: 18px;
+}
+#topic__badge img{
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #31363A;
+ 
+}
+
+#topic__badge span{
+    color: white;
 }
