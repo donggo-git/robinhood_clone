@@ -35,6 +35,7 @@ function Stats() {
                     )
                 })
                 Promise.all(promises).then(() => {
+                    console.log(tempData)
                     setMyStocks(tempData);
                 })
             })
@@ -59,7 +60,6 @@ function Stats() {
         });
 
         Promise.all(promises).then(() => {
-
             setStocksData(temStockData);
         })
     }, [])

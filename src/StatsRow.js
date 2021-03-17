@@ -1,10 +1,29 @@
 import React from 'react'
+import { db } from './firebase'
 import './StatsRow.css'
 import StockSVG from './stock.svg'
 function StatsRow(props) {
     const percentage = ((props.price - props.openPrice) / props.openPrice) * 100
+    const addStock = () => {
+        db.collection('myStocks')
+            .where('ticker', '==', props.name)
+            .get().then(function (querySnapshot) {
+                //update the record
+                if (!querySnapshot.empty) {
+                    querySnapshot.forEach((doc) => {
+                        // doc.data() is never undefined for query doc snapshots
+                        db.collection('myStocks').doc(doc.id).update({
+                            shares: doc.data().shares += 1
+                        })
+                    });
+                }
+                else {
+                    console.log("not avalaible")
+                }
+            })
+    }
     return (
-        <div className="row" >
+        <div className="row" onClick={addStock}>
             <div className="row__intro">
                 <h1>{props.name}</h1>
                 <p>{props.shares && (props.shares + " shares")}</p>

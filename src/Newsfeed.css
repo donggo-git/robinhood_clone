@@ -56,6 +56,7 @@ padding: 20px 0;
 }
 .newsfeed__popularlists__section{
     margin-top: 60px;
+    
 }
 .newsfeed__popularlists__intro{
     display: flex;
@@ -63,17 +64,26 @@ padding: 20px 0;
     align-items: center;
     padding: 20px 0 20px 0;
 }
+.newsfeed_popularlists_badges{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
 #topic__badge{
+    display: flex;
+    align-items: center;
     border: 1px solid #31363A;
     height: 30px;
-    padding: 3px;
+    padding: 3px 0;
     border-radius: 18px;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 #topic__badge img{
     border-radius: 50%;
     overflow: hidden;
     border: 1px solid #31363A;
- 
+    background-color: #31363A;
 }
 
 #topic__badge span{
