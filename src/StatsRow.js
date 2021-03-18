@@ -4,6 +4,16 @@ import './StatsRow.css'
 import StockSVG from './stock.svg'
 function StatsRow(props) {
     const percentage = ((props.price - props.openPrice) / props.openPrice) * 100
+    const percentageColor = () => {
+        let percentStyle = {}
+        if (percentage >= 0) {
+            percentStyle.color = '#5AC53B'
+        }
+        else {
+            percentStyle.color = 'red'
+        }
+        return percentStyle
+    }
     const addStock = () => {
         db.collection('myStocks')
             .where('ticker', '==', props.name)
@@ -18,7 +28,10 @@ function StatsRow(props) {
                     });
                 }
                 else {
-                    console.log("not avalaible")
+                    db.collection('myStocks').add({
+                        ticker: props.name,
+                        shares: 1
+                    })
                 }
             })
     }
@@ -33,7 +46,7 @@ function StatsRow(props) {
             </div>
             <div className="row__numbers">
                 <p className="row__price">${props.price}</p>
-                <p className="row__percentage">{Number(percentage).toFixed(2)}%</p>
+                <p className="row__percentage" style={percentageColor()}>{Number(percentage).toFixed(2)}%</p>
             </div>
         </div>
     )

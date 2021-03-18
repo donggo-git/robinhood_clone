@@ -56,7 +56,7 @@ padding: 20px 0;
 }
 .newsfeed__popularlists__section{
     margin-top: 60px;
-    
+    padding-bottom: 30px;
 }
 .newsfeed__popularlists__intro{
     display: flex;
